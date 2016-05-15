@@ -108,17 +108,17 @@ extension NSDate {
         return NSCalendar.currentCalendar().components(.Second, fromDate: date, toDate: self, options: []).second
     }
     func offsetFrom(date:NSDate) -> String {
-        let year = NSCalendar.currentCalendar().component(NSCalendarUnit.Year, fromDate: self)
+        let year = NSCalendar.currentCalendar().component(NSCalendarUnit.Year, fromDate: date)
         let currentYear = NSCalendar.currentCalendar().component(NSCalendarUnit.Year, fromDate: NSDate())
         
         if minutesFrom(date) <= 60 { return "\(minutesFrom(date))м" }
         if hoursFrom(date) <= 24 { return "\(hoursFrom(date))ч"   }
         if daysFrom(date) <= 7 { return "\(daysFrom(date))д"    }
         if currentYear == year {
-            return "\(NSCalendar.currentCalendar().component(NSCalendarUnit.Month, fromDate: NSDate())).\(NSCalendar.currentCalendar().component(NSCalendarUnit.Day, fromDate: NSDate()))"
+            return "\(NSCalendar.currentCalendar().component(NSCalendarUnit.Month, fromDate: NSDate())).\(NSCalendar.currentCalendar().component(NSCalendarUnit.Day, fromDate: date))"
         }
         if currentYear - year <= 10 {
-            return "\(NSCalendar.currentCalendar().component(NSCalendarUnit.Month, fromDate: NSDate())).\(NSCalendar.currentCalendar().component(NSCalendarUnit.Day, fromDate: NSDate())).\(year%2000)"
+            return "\(NSCalendar.currentCalendar().component(NSCalendarUnit.Month, fromDate: NSDate())).\(NSCalendar.currentCalendar().component(NSCalendarUnit.Day, fromDate: date)).\(year%2000)"
         }
         if year < 2000 { return "\(year)" }
         

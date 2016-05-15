@@ -37,6 +37,7 @@ class FeedViewController: UIViewController {
         hidingNavBarManager?.expansionResistance = 150
         setUserInfoView()
         self.navigationItem.title = "forPhobos"
+//        navigationController!.navigationBar.barTintColor = UIColor.greenColor()
     }
     func setUserInfoView() {
         let userInfoView = UIView.fromNib(xibUserInfoView) as! UserInfoView
