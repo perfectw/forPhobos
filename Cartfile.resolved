@@ -1,0 +1,4 @@
+github "andreamazz/AMScrollingNavbar" "2.1.1"
+github "Alamofire/Alamofire" "3.4.0"
+github "tristanhimmelman/HidingNavigationBar" "0.3.0"
+github "SwiftyJSON/SwiftyJSON" "2.3.3"
